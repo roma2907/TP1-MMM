@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FirstApp</string>
+    <string name="raz">Remise à zéro</string>
+    <string name="add_tell_number">Ajout d\'un numéro</string>
+    <string name="browser">Browser</string>
+    <string name="title_activity_display">DisplayActivity</string>
+    <string name="title_activity_list_client">ListClientActivity</string>
+</resources>

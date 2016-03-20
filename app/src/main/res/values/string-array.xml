@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="departements">
+        <item>Mayenne</item>
+        <item>Ain</item>
+        <item>Nord</item>
+        <item>Morbihan</item>
+        <item>Ile et vilaine</item>
+        <item>Ile de France</item>
+        <item>Alsace</item>
+    </string-array>
+</resources>

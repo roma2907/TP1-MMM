@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ramage.istic.fr.firstapp.MainActivity">
+    <item
+        android:id="@+id/raz"
+        android:title="@string/raz"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/addtel"
+        android:title="@string/add_tell_number"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/browser"
+        android:title="@string/browser"
+        app:showAsAction="never" />
+</menu>
