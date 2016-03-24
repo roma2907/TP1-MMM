@@ -27,7 +27,7 @@ import java.util.Map;
 
 import ramage.istic.fr.firstapp.model.User;
 
-public class MainActivity extends AppCompatActivity {
+public class AddActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,9 +83,6 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),
                 name + " " + lastName + " " + date + " " + city +" "+department, Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent();
-        // ajout de données supplémentaires dans l'intent
-        User user = new User(name,lastName,city,date,department);
         ContentValues values = new ContentValues();
 
         values.put(LibraryContentProvider.USER_NAME,name);
@@ -101,8 +98,7 @@ public class MainActivity extends AppCompatActivity {
         Uri uri = getContentResolver().insert(
                 LibraryContentProvider.CONTENT_URI, values);
 
-        intent.putExtra("user",user);
-        setResult(RESULT_OK,intent);
+        setResult(RESULT_OK);
 
         finish();
     }
