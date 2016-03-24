@@ -10,11 +10,21 @@ import java.util.Date;
  */
 public class User implements Parcelable {
 
+    private String id;
     private String name;
     private String lastname;
     private String date;
     private String city;
     private String department;
+
+    public User(String id,String name,String lastName,String date,String city,String department){
+        this.id=id;
+        this.name=name;
+        this.lastname=lastName;
+        this.date=date;
+        this.city=city;
+        this.department=department;
+    }
 
     public User(String name,String lastName,String date,String city,String department){
         this.name=name;
@@ -25,6 +35,7 @@ public class User implements Parcelable {
     }
 
     protected User(Parcel in) {
+        id = in.readString();
         name = in.readString();
         lastname = in.readString();
         date = in.readString();
@@ -72,6 +83,7 @@ public class User implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
         dest.writeString(name);
         dest.writeString(lastname);
         dest.writeString(date);

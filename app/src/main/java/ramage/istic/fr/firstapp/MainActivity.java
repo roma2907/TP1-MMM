@@ -1,6 +1,7 @@
 package ramage.istic.fr.firstapp;
 
 import android.app.ActionBar;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -82,15 +83,28 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),
                 name + " " + lastName + " " + date + " " + city +" "+department, Toast.LENGTH_SHORT).show();
 
-        // creation d'un intent pour appeler une autre activité (DisplayActivity)
-        Intent intent = new Intent(getApplicationContext(),DisplayActivity.class);
-
-
+        Intent intent = new Intent();
         // ajout de données supplémentaires dans l'intent
         User user = new User(name,lastName,city,date,department);
+        ContentValues values = new ContentValues();
+
+        values.put(LibraryContentProvider.USER_NAME,name);
+
+        values.put(LibraryContentProvider.USER_LASTNAME,lastName);
+
+        values.put(LibraryContentProvider.USER_CITY,city);
+
+        values.put(LibraryContentProvider.USER_DATE,date);
+
+        values.put(LibraryContentProvider.USER_DEPARTEMENT,department);
+
+        Uri uri = getContentResolver().insert(
+                LibraryContentProvider.CONTENT_URI, values);
+
         intent.putExtra("user",user);
-        //lancement de la seconde activité, en demandant un code retour
-        startActivityForResult(intent, 0);
+        setResult(RESULT_OK,intent);
+
+        finish();
     }
 
     public void remiseAzero() {
